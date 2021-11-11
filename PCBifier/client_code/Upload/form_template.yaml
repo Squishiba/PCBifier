@@ -1,0 +1,91 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:dashboard.html'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: RichText
+    properties: {role: null, align: center, tooltip: '', enable_slots: true, border: '',
+      foreground: '', visible: true, font_size: null, content: 'Select an Image, and
+        exposure time!', font: '', spacing_above: small, spacing_below: small, data: null,
+      background: '', format: plain_text}
+    name: rich_text_2
+    layout_properties: {grid_position: 'RQKZDB,RMOQCL'}
+  - type: FileLoader
+    properties:
+      role: null
+      show_state: true
+      align: center
+      tooltip: ''
+      border: ''
+      file_types: .png,.jpg,.jpeg,
+      enabled: true
+      files: []
+      foreground: ''
+      visible: true
+      text: Upload
+      font_size: null
+      font: ''
+      spacing_above: small
+      icon_align: left
+      spacing_below: small
+      italic: false
+      file: null
+      background: ''
+      bold: false
+      underline: false
+      multiple: false
+      icon: fa:upload
+    name: ImageLoad
+    layout_properties: {grid_position: 'ONGEGY,RTUWBU TZFWOY,PIJIHQ', full_width_row: false}
+    event_bindings: {change: ImageLoad_change}
+  - type: DropDown
+    properties:
+      role: null
+      align: center
+      tooltip: ''
+      placeholder: Exposure Time
+      border: ''
+      enabled: true
+      foreground: ''
+      items: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '']
+      visible: true
+      font_size: null
+      font: ''
+      spacing_above: small
+      spacing_below: small
+      italic: false
+      background: ''
+      bold: false
+      underline: false
+      include_placeholder: true
+    name: exposuredrop
+    layout_properties: {grid_position: 'ONGEGY,RTUWBU VUDBZQ,KLDHGY'}
+    event_bindings: {}
+  - type: Image
+    properties: {role: null, vertical_align: center, height: 266, tooltip: '', border: '',
+      foreground: '', visible: true, display_mode: shrink_to_fit, spacing_above: small,
+      source: '', spacing_below: small, background: '', horizontal_align: center}
+    name: image_1
+    layout_properties: {grid_position: 'ONGEGY,BKCZSI', full_width_row: false}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Upload!, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: upload
+    layout_properties: {grid_position: 'ONGEGY,FNVIOL ZNTDNX,WCGAEH', full_width_row: false}
+    event_bindings: {click: Upload_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Cancel..., font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: 'fa:times-circle'}
+    name: cancelbutton
+    layout_properties: {grid_position: 'ONGEGY,FNVIOL OTPGGO,NBOWXM', full_width_row: false}
+    event_bindings: {click: cancel_click}
+custom_component: false

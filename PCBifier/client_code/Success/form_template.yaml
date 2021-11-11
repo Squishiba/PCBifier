@@ -1,0 +1,17 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:dashboard.html'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: RichText
+    properties: {role: null, align: center, tooltip: '', enable_slots: true, border: '',
+      foreground: '#ffffff', visible: true, font_size: 64, content: Waiting for Receipt...,
+      font: Roboto, spacing_above: small, spacing_below: small, data: null, background: '#000000',
+      format: markdown}
+    name: textie
+    layout_properties: {grid_position: 'BXRDXE,LIEFDT'}

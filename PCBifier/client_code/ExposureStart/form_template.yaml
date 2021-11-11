@@ -1,0 +1,27 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {tooltip: '', background: '', foreground: '', border: '', visible: true,
+    role: null, html: '@theme:dashboard.html'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: Button
+    properties: {role: null, align: full, tooltip: '', border: '', enabled: true,
+      foreground: '#e1ffe0', visible: true, text: Start Exposure!, font_size: 35,
+      font: Roboto, spacing_above: large, icon_align: top, spacing_below: large, italic: false,
+      background: '#22f725', bold: false, underline: false, icon: 'fa:sun-o'}
+    name: Exposurebutton1
+    layout_properties: {grid_position: 'BFPWSZ,MOHPAF', full_width_row: false}
+    event_bindings: {click: Exposurebutton1_click}
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: 30, font: Roboto, spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: true, icon: 'fa:clock-o'}
+    name: label_1
+    layout_properties: {grid_position: 'MDZLZE,EOFMPR'}
+    data_bindings: []

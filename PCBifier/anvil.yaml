@@ -1,0 +1,15 @@
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/google.yml
+  client_config: {}
+  server_config: {}
+startup: {type: form, module: Upload}
+package_name: PCBifier
+allow_embedding: false
+name: PCBifier
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox}
+startup_form: null
+db_schema: {}
+uplink_visible: true
